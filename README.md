@@ -1,7 +1,7 @@
 <div id="top" class="">
 
 <div align="center" class="text-center">
-<h1>FONTAWESOME-FREE-PRO</h1>
+<h1>FONT AWESOME FREE PRO</h1>
 <p><em>Elevate your web experience with seamless icon integration.</em></p>
 
 <img alt="last-commit" src="https://img.shields.io/github/last-commit/crc137/fontawesome-free-pro?style=flat&amp;logo=git&amp;logoColor=white&amp;color=0080ff" class="inline-block mx-1" style="margin: 0px 2px;">
