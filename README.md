@@ -10,7 +10,6 @@
 <p><em>Built with the tools and technologies:</em></p>
 </div>
 <br>
-<hr>
 
 
 
