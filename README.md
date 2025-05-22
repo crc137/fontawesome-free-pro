@@ -20,4 +20,22 @@
 <li class="my-0">♿ <strong>Improved Accessibility:</strong> Enhance navigation with visual cues that benefit all users.</li>
 <li class="my-0">⚡ <strong>Performance Optimization:</strong> Lightweight font files ensure fast loading times for optimal user experience.</li>
 </ul>
+
+Getting Started
+To use the assets showcased on this site in your own projects, follow these steps:
+Visit the Repository: The source files for the icons and assets are available at https://github.com/crc137/fontawesome-free-pro. Clone the repository to access the files:
+
+git clone https://github.com/crc137/fontawesome-free-pro.git
+
+Include Assets in Your Project: Copy the necessary CSS files from the repository into your project. For example:
+
+<head>
+  <link rel="stylesheet" href="https://crc137.github.io/fontawesome-free-pro/all.css">
+</head>
+<body>
+  <i class="fas fa-star"></i>
+</body>
+
+Note: Since this project contains no JavaScript, only CSS and HTML are required for integration.
+Explore the GitHub Pages Site: Navigate to https://crc137.github.io/fontawesome-free-pro/ to see live examples of how to use the icons with HTML and CSS.
 </div>
