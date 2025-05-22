@@ -41,3 +41,9 @@ Include Assets in Your Project: Copy the necessary CSS files from the repository
 Note: Since this project contains no JavaScript, only CSS and HTML are required for integration.
 Explore the GitHub Pages Site: Navigate to https://crc137.github.io/fontawesome-free-pro/ to see live examples of how to use the icons with HTML and CSS.
 </div>
+
+---
+
+## 🛡 License
+
+MIT © [Coonlink](https://coonlink.com)
