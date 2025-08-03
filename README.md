@@ -41,7 +41,5 @@
 
 </div>
 
---
-
 <h2>🛡 License</h2>
 <p>MIT © <a href="https://coonlink.com">Coonlink</a></p>
