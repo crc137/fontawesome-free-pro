@@ -9,11 +9,44 @@
                     █   ██                 █▐  
                                            ▐   
 */
-@import url('./all.min.css');
-@import url('./brands.min.css');
-@import url('./duotone.min.css');
-@import url('./sharp-light.min.css');
-@import url('./sharp-regular.min.css');
-@import url('./sharp-solid.min.css');
-@import url('./sharp-duotone-thin.min.css');
-@import url('./chisel-regular.min.css');
+
+/* Core Styles */
+@import url('./Core-Styles/all.min.css');
+@import url('./Core-Styles/brands.min.css');
+@import url('./Core-Styles/light.min.css');
+@import url('./Core-Styles/regular.min.css');
+@import url('./Core-Styles/solid.min.css');
+@import url('./Core-Styles/thin.min.css');
+
+/* Sharp Styles */
+@import url('./Sharp-Styles/sharp-light.min.css');
+@import url('./Sharp-Styles/sharp-regular.min.css');
+@import url('./Sharp-Styles/sharp-solid.min.css');
+@import url('./Sharp-Styles/sharp-thin.min.css');
+
+/* Duotone Styles */
+@import url('./Duotone-Styles/duotone.min.css');
+@import url('./Duotone-Styles/duotone-light.min.css');
+@import url('./Duotone-Styles/duotone-regular.min.css');
+@import url('./Duotone-Styles/duotone-thin.min.css');
+@import url('./Duotone-Styles/sharp-duotone-light.min.css');
+@import url('./Duotone-Styles/sharp-duotone-regular.min.css');
+@import url('./Duotone-Styles/sharp-duotone-solid.min.css');
+@import url('./Duotone-Styles/sharp-duotone-thin.min.css');
+
+/* Jelly Styles */
+@import url('./Jelly-Styles/jelly-regular.min.css');
+@import url('./Jelly-Styles/jelly-fill-regular.min.css');
+@import url('./Jelly-Styles/jelly-duo-regular.min.css');
+
+/* Slab Styles */
+@import url('./Slab-Styles/slab-regular.min.css');
+@import url('./Slab-Styles/slab-press-regular.min.css');
+
+/* Special Styles */
+@import url('./Special-Styles/chisel-regular.min.css');
+@import url('./Special-Styles/etch-solid.min.css');
+@import url('./Special-Styles/notdog-solid.min.css');
+@import url('./Special-Styles/notdog-duo-solid.min.css');
+@import url('./Special-Styles/thumbprint-light.min.css');
+@import url('./Special-Styles/whiteboard-semibold.min.css');
