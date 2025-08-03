@@ -2,9 +2,8 @@
 
 <div align="center" class="text-center">
 <h1>Font Awesome Free v7.0.0</h1>
-<p><em>Enhance your web projects with seamless icon integration, shared completely free from FontAwesome.com.</em></p>
-
 <img src="https://blog.fontawesome.com/img/built/Y6Qr7mEpHN-1440.avif" style="border-radius: 0.75em;">
+<p><em>Enhance your web projects with seamless icon integration, shared completely free from FontAwesome.com.</em></p>
 
 <img alt="last-commit" src="https://img.shields.io/github/last-commit/crc137/fontawesome-free-pro?style=flat&amp;logo=git&amp;logoColor=white&amp;color=0080ff" class="inline-block mx-1" style="margin: 0px 2px;">
 <img alt="repo-top-language" src="https://img.shields.io/github/languages/top/crc137/fontawesome-free-pro?style=flat&amp;color=0080ff" class="inline-block mx-1" style="margin: 0px 2px;">
