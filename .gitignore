@@ -108,3 +108,6 @@ coverage/
 # Local development
 .local/
 .cache/
+
+# Scripts
+github.sh
