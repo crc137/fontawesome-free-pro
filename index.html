@@ -3,187 +3,829 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Font Awesome Free Pro v7.0.0 - CDN Demo</title>
+    <title>Font Awesome Free Pro v7.0.0 - Complete Icon Library</title>
     <link rel="stylesheet" href="./all.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary-color: #64748b;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --error-color: #ef4444;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --surface-hover: #f1f5f9;
+            --border: #e2e8f0;
+            --text-primary: #1e293b;
+            --text-secondary: #64748b;
+            --text-muted: #94a3b8;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --radius: 8px;
+            --radius-lg: 12px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: var(--background);
+            font-size: 16px;
+        }
+
+        .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background: #f5f5f5;
+            padding: 0 20px;
         }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .header h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+            letter-spacing: -0.02em;
+        }
+
+        .header .subtitle {
+            font-size: 1.25rem;
+            opacity: 0.9;
+            margin-bottom: 32px;
+            font-weight: 400;
+        }
+
+        .version-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 0.875rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: var(--radius);
+            transition: all 0.2s ease;
+            position: relative;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            background: var(--surface-hover);
+        }
+
+        .nav-link.active {
+            color: var(--primary-color);
+            background: rgba(59, 130, 246, 0.1);
+        }
+
+        /* Installation Section */
+        .installation {
+            background: var(--surface);
+            padding: 40px 0;
+        }
+
+        .installation-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .installation-text h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .installation-text p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+            font-size: 1.125rem;
+        }
+
+        .code-block {
+            background: var(--text-primary);
+            color: #e2e8f0;
+            padding: 20px;
+            border-radius: var(--radius-lg);
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
+            font-size: 0.875rem;
+            line-height: 1.5;
+            position: relative;
+            overflow-x: auto;
+            box-shadow: var(--shadow-lg);
+        }
+
+        .code-block::before {
+            content: 'HTML';
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 12px;
+            right: 60px;
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        .copy-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Demo Sections */
         .demo-section {
-            background: white;
-            padding: 20px;
-            margin: 20px 0;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 60px 0;
         }
+
+        .demo-section:nth-child(even) {
+            background: var(--surface);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 48px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+        }
+
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Icon Grid */
         .icon-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 32px 0;
         }
+
         .icon-item {
             display: flex;
             align-items: center;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            background: #fafafa;
+            padding: 20px;
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
         }
+
+        .icon-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary-color);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .icon-item:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--primary-color);
+        }
+
+        .icon-item:hover::before {
+            transform: scaleY(1);
+        }
+
         .icon-item i {
-            margin-right: 10px;
-            font-size: 1.2em;
+            margin-right: 16px;
+            font-size: 1.5rem;
+            color: var(--primary-color);
+            min-width: 32px;
+            text-align: center;
         }
-        h1, h2 {
-            color: #333;
+
+        .icon-item span {
+            font-weight: 500;
+            color: var(--text-primary);
         }
-        .code {
-            background: #f4f4f4;
-            padding: 10px;
+
+        .icon-item .code-snippet {
+            font-family: 'SF Mono', Monaco, monospace;
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            background: var(--surface);
+            padding: 4px 8px;
             border-radius: 4px;
-            font-family: monospace;
-            margin: 10px 0;
+            margin-left: auto;
+        }
+
+        /* Search */
+        .search-container {
+            max-width: 500px;
+            margin: 0 auto 40px;
+            position: relative;
+        }
+
+        .search-input {
+            width: 100%;
+            padding: 16px 20px 16px 50px;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            font-size: 1rem;
+            background: var(--background);
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 18px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-muted);
+        }
+
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin: 48px 0;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 24px;
+            background: var(--background);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-weight: 500;
+            margin-top: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 60px 0 40px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+            text-align: left;
+        }
+
+        .footer-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 8px;
+            transition: color 0.2s ease;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 24px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .installation-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .nav-content {
+                gap: 16px;
+            }
+
+            .icon-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 40px 0;
+            }
+
+            .demo-section {
+                padding: 40px 0;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Loading state */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
         }
     </style>
 </head>
 <body>
-    <h1>🎨 Font Awesome Free Pro v7.0.0</h1>
-    <p>The internet's icon library + toolkit. Used by millions of designers, devs, & content creators.</p>
-
-    <div class="demo-section">
-        <h2>📦 Installation</h2>
-        <div class="code">
-            &lt;link rel="stylesheet" href="https://crc137.github.io/fontawesome-free-pro/all.css"&gt;
-        </div>
-    </div>
-
-    <div class="demo-section">
-        <h2>🔷 Core Styles</h2>
-        <div class="icon-grid">
-            <div class="icon-item">
-                <i class="fas fa-star"></i>
-                <span>fas fa-star (Solid)</span>
-            </div>
-            <div class="icon-item">
-                <i class="far fa-star"></i>
-                <span>far fa-star (Regular)</span>
-            </div>
-            <div class="icon-item">
-                <i class="fal fa-star"></i>
-                <span>fal fa-star (Light)</span>
-            </div>
-            <div class="icon-item">
-                <i class="fat fa-star"></i>
-                <span>fat fa-star (Thin)</span>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <h1>🎨 Font Awesome Free Pro</h1>
+                <p class="subtitle">The internet's most popular icon library + toolkit</p>
+                <div class="version-badge">
+                    <i class="fas fa-tag"></i>
+                    Version 7.0.0
+                </div>
             </div>
         </div>
-    </div>
+    </header>
 
-    <div class="demo-section">
-        <h2>🔷 Sharp Styles</h2>
-        <div class="icon-grid">
-            <div class="icon-item">
-                <i class="fa-sharp fa-solid fa-star"></i>
-                <span>fa-sharp fa-solid fa-star</span>
-            </div>
-            <div class="icon-item">
-                <i class="fa-sharp fa-regular fa-star"></i>
-                <span>fa-sharp fa-regular fa-star</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="demo-section">
-        <h2>🎨 Duotone Styles</h2>
-        <div class="icon-grid">
-            <div class="icon-item">
-                <i class="fa-duotone fa-star"></i>
-                <span>fa-duotone fa-star</span>
-            </div>
-            <div class="icon-item">
-                <i class="fa-sharp fa-duotone fa-star"></i>
-                <span>fa-sharp fa-duotone fa-star</span>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <a href="#installation" class="nav-link">Installation</a>
+                <a href="#core" class="nav-link">Core Styles</a>
+                <a href="#sharp" class="nav-link">Sharp</a>
+                <a href="#duotone" class="nav-link">Duotone</a>
+                <a href="#special" class="nav-link">Special</a>
+                <a href="#examples" class="nav-link">Examples</a>
             </div>
         </div>
-    </div>
+    </nav>
 
-    <div class="demo-section">
-        <h2>🍯 Jelly Styles</h2>
-        <div class="icon-grid">
-            <div class="icon-item">
-                <i class="fa-jelly fa-regular fa-star"></i>
-                <span>fa-jelly fa-regular fa-star</span>
-            </div>
-            <div class="icon-item">
-                <i class="fa-jelly fa-fill fa-regular fa-star"></i>
-                <span>fa-jelly fa-fill fa-regular fa-star</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="demo-section">
-        <h2>📏 Slab Styles</h2>
-        <div class="icon-grid">
-            <div class="icon-item">
-                <i class="fa-slab fa-regular fa-star"></i>
-                <span>fa-slab fa-regular fa-star</span>
-            </div>
-            <div class="icon-item">
-                <i class="fa-slab fa-press fa-regular fa-star"></i>
-                <span>fa-slab fa-press fa-regular fa-star</span>
+    <!-- Installation -->
+    <section id="installation" class="installation">
+        <div class="container">
+            <div class="installation-content">
+                <div class="installation-text">
+                    <h2>Quick Installation</h2>
+                    <p>Get started in seconds with our CDN link. No downloads, no setup required.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number">7,000+</span>
+                            <span class="stat-label">Icons</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Styles</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-block">
+                    <button class="copy-btn" onclick="copyToClipboard(this)">Copy</button>
+                    &lt;link rel="stylesheet" href="https://crc137.github.io/fontawesome-free-pro/all.css"&gt;
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="demo-section">
-        <h2>⭐ Special Styles</h2>
-        <div class="icon-grid">
-            <div class="icon-item">
-                <i class="fa-chisel fa-regular fa-star"></i>
-                <span>fa-chisel fa-regular fa-star</span>
+    <!-- Core Styles -->
+    <section id="core" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔷 Core Styles</h2>
+                <p>The foundation of Font Awesome with four weight variations</p>
             </div>
-            <div class="icon-item">
-                <i class="fa-etch fa-solid fa-star"></i>
-                <span>fa-etch fa-solid fa-star</span>
+            
+            <div class="search-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" class="search-input" placeholder="Search icons..." id="iconSearch">
+            </div>
+
+            <div class="icon-grid" id="coreGrid">
+                <div class="icon-item" data-search="solid star">
+                    <i class="fas fa-star"></i>
+                    <span>Solid Star</span>
+                    <code class="code-snippet">fas fa-star</code>
+                </div>
+                <div class="icon-item" data-search="regular star">
+                    <i class="far fa-star"></i>
+                    <span>Regular Star</span>
+                    <code class="code-snippet">far fa-star</code>
+                </div>
+                <div class="icon-item" data-search="light star">
+                    <i class="fal fa-star"></i>
+                    <span>Light Star</span>
+                    <code class="code-snippet">fal fa-star</code>
+                </div>
+                <div class="icon-item" data-search="thin star">
+                    <i class="fat fa-star"></i>
+                    <span>Thin Star</span>
+                    <code class="code-snippet">fat fa-star</code>
+                </div>
+                <div class="icon-item" data-search="solid heart">
+                    <i class="fas fa-heart"></i>
+                    <span>Solid Heart</span>
+                    <code class="code-snippet">fas fa-heart</code>
+                </div>
+                <div class="icon-item" data-search="regular heart">
+                    <i class="far fa-heart"></i>
+                    <span>Regular Heart</span>
+                    <code class="code-snippet">far fa-heart</code>
+                </div>
+                <div class="icon-item" data-search="solid home">
+                    <i class="fas fa-home"></i>
+                    <span>Solid Home</span>
+                    <code class="code-snippet">fas fa-home</code>
+                </div>
+                <div class="icon-item" data-search="solid user">
+                    <i class="fas fa-user"></i>
+                    <span>Solid User</span>
+                    <code class="code-snippet">fas fa-user</code>
+                </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="demo-section">
-        <h2>🔗 Usage Examples</h2>
-        <h3>Basic Icon</h3>
-        <div class="code">
-            &lt;i class="fas fa-heart"&gt;&lt;/i&gt;
+    <!-- Sharp Styles -->
+    <section id="sharp" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔷 Sharp Styles</h2>
+                <p>Crisp, angular icons with sharp edges for modern interfaces</p>
+            </div>
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <i class="fa-sharp fa-solid fa-star"></i>
+                    <span>Sharp Solid Star</span>
+                    <code class="code-snippet">fa-sharp fa-solid fa-star</code>
+                </div>
+                <div class="icon-item">
+                    <i class="fa-sharp fa-regular fa-star"></i>
+                    <span>Sharp Regular Star</span>
+                    <code class="code-snippet">fa-sharp fa-regular fa-star</code>
+                </div>
+                <div class="icon-item">
+                    <i class="fa-sharp fa-light fa-star"></i>
+                    <span>Sharp Light Star</span>
+                    <code class="code-snippet">fa-sharp fa-light fa-star</code>
+                </div>
+                <div class="icon-item">
+                    <i class="fa-sharp fa-thin fa-star"></i>
+                    <span>Sharp Thin Star</span>
+                    <code class="code-snippet">fa-sharp fa-thin fa-star</code>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <h3>Icon with Size</h3>
-        <div class="code">
-            &lt;i class="fas fa-heart fa-2x"&gt;&lt;/i&gt;
+    <!-- Duotone Styles -->
+    <section id="duotone" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🎨 Duotone Styles</h2>
+                <p>Two-color icons with customizable primary and secondary colors</p>
+            </div>
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <i class="fa-duotone fa-star" style="--fa-primary-color: #3b82f6; --fa-secondary-color: #93c5fd;"></i>
+                    <span>Duotone Star</span>
+                    <code class="code-snippet">fa-duotone fa-star</code>
+                </div>
+                <div class="icon-item">
+                    <i class="fa-sharp fa-duotone fa-star" style="--fa-primary-color: #10b981; --fa-secondary-color: #6ee7b7;"></i>
+                    <span>Sharp Duotone Star</span>
+                    <code class="code-snippet">fa-sharp fa-duotone fa-star</code>
+                </div>
+                <div class="icon-item">
+                    <i class="fa-duotone fa-heart" style="--fa-primary-color: #ef4444; --fa-secondary-color: #fca5a5;"></i>
+                    <span>Duotone Heart</span>
+                    <code class="code-snippet">fa-duotone fa-heart</code>
+                </div>
+                <div class="icon-item">
+                    <i class="fa-duotone fa-home" style="--fa-primary-color: #f59e0b; --fa-secondary-color: #fcd34d;"></i>
+                    <span>Duotone Home</span>
+                    <code class="code-snippet">fa-duotone fa-home</code>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <h3>Icon Stack</h3>
-        <div class="code">
-            &lt;span class="fa-stack"&gt;<br>
-            &nbsp;&nbsp;&lt;i class="fas fa-square fa-stack-2x"&gt;&lt;/i&gt;<br>
-            &nbsp;&nbsp;&lt;i class="fas fa-star fa-stack-1x"&gt;&lt;/i&gt;<br>
-            &lt;/span&gt;
+    <!-- Special Styles -->
+    <section id="special" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>⭐ Special Styles</h2>
+                <p>Unique artistic styles for creative projects</p>
+            </div>
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <i class="fa-jelly fa-regular fa-star"></i>
+                    <span>Jelly Star</span>
+                    <code class="code-snippet">fa-jelly fa-regular fa-star</code>
+                </div>
+                <div class="icon-item">
+                    <i class="fa-slab fa-regular fa-star"></i>
+                    <span>Slab Star</span>
+                    <code class="code-snippet">fa-slab fa-regular fa-star</code>
+                </div>
+                <div class="icon-item">
+                    <i class="fa-chisel fa-regular fa-star"></i>
+                    <span>Chisel Star</span>
+                    <code class="code-snippet">fa-chisel fa-regular fa-star</code>
+                </div>
+                <div class="icon-item">
+                    <i class="fa-etch fa-solid fa-star"></i>
+                    <span>Etch Star</span>
+                    <code class="code-snippet">fa-etch fa-solid fa-star</code>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <div class="demo-section">
-        <h2>📚 Documentation</h2>
-        <p>For more information and complete documentation, visit:</p>
-        <ul>
-            <li><a href="https://github.com/crc137/fontawesome-free-pro">GitHub Repository</a></li>
-        </ul>
-    </div>
+    <!-- Usage Examples -->
+    <section id="examples" class="demo-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>🔗 Usage Examples</h2>
+                <p>Common patterns and advanced techniques</p>
+            </div>
+            
+            <div class="icon-grid">
+                <div class="icon-item">
+                    <i class="fas fa-heart fa-2x" style="color: #ef4444;"></i>
+                    <span>Sized Icon</span>
+                    <code class="code-snippet">fa-2x</code>
+                </div>
+                <div class="icon-item">
+                    <span class="fa-stack fa-2x">
+                        <i class="fas fa-square fa-stack-2x" style="color: #3b82f6;"></i>
+                        <i class="fas fa-star fa-stack-1x" style="color: white;"></i>
+                    </span>
+                    <span>Stacked Icons</span>
+                    <code class="code-snippet">fa-stack</code>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-spinner fa-spin"></i>
+                    <span>Animated Icon</span>
+                    <code class="code-snippet">fa-spin</code>
+                </div>
+                <div class="icon-item">
+                    <i class="fas fa-bell fa-shake" style="color: #f59e0b;"></i>
+                    <span>Shake Animation</span>
+                    <code class="code-snippet">fa-shake</code>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <footer style="text-align: center; margin-top: 40px; color: #666;">
-        <p>✨ Font Awesome Free Pro v7.0.0 by <a href="https://dev.coonlink.com/">CoonDev</a></p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <a href="https://github.com/crc137/fontawesome-free-pro">GitHub Repository</a>
+                    <a href="#installation">Installation Guide</a>
+                    <a href="#examples">Usage Examples</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Styles</h3>
+                    <a href="#core">Core Styles</a>
+                    <a href="#sharp">Sharp Styles</a>
+                    <a href="#duotone">Duotone Styles</a>
+                    <a href="#special">Special Styles</a>
+                </div>
+                <div class="footer-section">
+                    <h3>Community</h3>
+                    <a href="https://dev.coonlink.com/">CoonDev</a>
+                    <a href="https://fontawesome.com/">Font Awesome</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>✨ Font Awesome Free Pro v7.0.0 by <a href="https://dev.coonlink.com/" style="color: #3b82f6;">CoonDev</a></p>
+                <p>Free for personal and commercial use</p>
+            </div>
+        </div>
     </footer>
+
+    <script>
+        // Search functionality
+        const searchInput = document.getElementById('iconSearch');
+        const iconItems = document.querySelectorAll('.icon-item[data-search]');
+
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            iconItems.forEach(item => {
+                const searchData = item.getAttribute('data-search').toLowerCase();
+                if (searchData.includes(searchTerm)) {
+                    item.style.display = 'flex';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        });
+
+        // Copy to clipboard functionality
+        function copyToClipboard(button) {
+            const codeBlock = button.parentElement;
+            const text = codeBlock.textContent.replace('Copy', '').trim();
+            
+            navigator.clipboard.writeText(text).then(() => {
+                button.textContent = 'Copied!';
+                setTimeout(() => {
+                    button.textContent = 'Copy';
+                }, 2000);
+            });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Intersection Observer for nav highlighting
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('.nav-link');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    navLinks.forEach(link => {
+                        link.classList.remove('active');
+                        if (link.getAttribute('href') === `#${id}`) {
+                            link.classList.add('active');
+                        }
+                    });
+                }
+            });
+        }, { threshold: 0.3 });
+
+        sections.forEach(section => observer.observe(section));
+
+        // Add fade-in animation on scroll
+        const observerFade = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.icon-item, .section-header').forEach(el => {
+            observerFade.observe(el);
+        });
+
+        // Click to copy icon code
+        document.querySelectorAll('.icon-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const codeSnippet = this.querySelector('.code-snippet');
+                if (codeSnippet) {
+                    const text = codeSnippet.textContent;
+                    navigator.clipboard.writeText(`<i class="${text}"></i>`).then(() => {
+                        // Show feedback
+                        const originalBg = this.style.backgroundColor;
+                        this.style.backgroundColor = 'rgba(59, 130, 246, 0.1)';
+                        setTimeout(() => {
+                            this.style.backgroundColor = originalBg;
+                        }, 300);
+                    });
+                }
+            });
+        });
+    </script>
 </body>
-</html> 
+</html>

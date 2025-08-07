@@ -1,0 +1,69 @@
+{
+  "name": "fontawesome-free-pro",
+  "version": "7.0.0",
+  "description": "Font Awesome Free Pro v7.0.0 - The internet's most popular icon library + toolkit",
+  "main": "all.css",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx serve .",
+    "build": "echo 'No build process required - static files only'",
+    "test": "echo 'No tests specified'",
+    "validate": "html5validator --root . --match '*.html' --ignore-re 'Attribute .* not allowed on element .* at this point.'",
+    "optimize": "echo 'Font files are already optimized'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crc137/fontawesome-free-pro.git"
+  },
+  "keywords": [
+    "font-awesome",
+    "icons",
+    "fonts",
+    "css",
+    "web-fonts",
+    "scalable-icons",
+    "vector-icons",
+    "ui-icons",
+    "free",
+    "pro",
+    "duotone",
+    "sharp",
+    "jelly",
+    "slab"
+  ],
+  "author": {
+    "name": "CoonDev",
+    "url": "https://dev.coonlink.com/"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crc137/fontawesome-free-pro/issues"
+  },
+  "homepage": "https://crc137.github.io/fontawesome-free-pro/",
+  "files": [
+    "Core-Styles/",
+    "Sharp-Styles/",
+    "Duotone-Styles/",
+    "Jelly-Styles/",
+    "Slab-Styles/",
+    "Special-Styles/",
+    "webfonts/",
+    "all.css",
+    "index.html",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ],
+  "devDependencies": {
+    "html5validator": "^0.4.2",
+    "serve": "^14.2.1"
+  }
+}
