@@ -35,7 +35,7 @@ git clone https://github.com/crc137/fontawesome-free-pro.git
 2. **Include Assets in Your Project:** Copy the necessary CSS files from the repository into your project. For example:
 ```html
 <head>
-  <link rel="stylesheet" href="https://crc137.github.io/fontawesome-free-pro/all.css">
+  <link rel="stylesheet" href="https://raw.coonlink.com/cloud/fontawesome/v7.0.0-rc.1/all.css">
 </head>
 <body>
   <i class="fas fa-star"></i>
